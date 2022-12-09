@@ -22,6 +22,8 @@
             </DataGrid>
         </Border>
         <Button x:Name="addbutton" Content="Добавить" Margin="35" Height="50" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="addbutton_Click"/>
+        <Button x:Name="excel" Content="Excel" Margin="250, 35" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="excel_Click"/>
+        <Button x:Name="json" Content="Json" Margin="250, 35" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="json_Click"/>
         <Button x:Name="reload" Content="Обновить" Margin="35" Height="50" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="reload_Click"/>
     </Grid>
 </Window>
