@@ -105,5 +105,22 @@ namespace up02._01
             var json_file = JsonConvert.SerializeObject(PersonalList);
             File.WriteAllText("PersonalList.json", json_file.ToString());
         }
+
+        private void TBsearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<Personal> PersonalList = new List<Personal>();
+            using (var db = new AppContext())
+            {
+                var query = from b in db.personals select b;
+                foreach (var item in query)
+                {
+                    if (item.ident.Contains(TBsearch.Text) || item.name.Contains(TBsearch.Text) || item.surname.Contains(TBsearch.Text) || item.patronymic.Contains(TBsearch.Text) || item.post.Contains(TBsearch.Text))
+                    {
+                        PersonalList.Add(item);
+                    }
+                }
+            }
+            personalgrid.ItemsSource = PersonalList;
+        }
     }
 }
